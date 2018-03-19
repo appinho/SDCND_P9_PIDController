@@ -1,7 +1,9 @@
 # CarND-Controls-PID
 Self-Driving Car Engineer Nanodegree Program
 
----
+## Reflection
+
+Parameter have been tuned by manual tuning. First, all parameters beside the P component have been set to 0. Then, a value of 0.2 for the P component has been found to be a appropriate "maximal force" on the CTE. Because the car was oscillating and not getting closer to the center of the lane the D component has been set to a non zero value. Since, the D error was smaller than the P error a bigger D component than the P component had to be found. A value of 8 worked well to avoid oscillations. Last but not least, the car had a permanent offset compared to the center of the lane which can be tackled with the I component. To bound the I error over time a frame counter has been included to normalize the I error. To minimize the effect of a permanent offset to the center of the lane, a value of 0.2 for the I component improved the car's driving behaviour.
 
 ## Dependencies
 
