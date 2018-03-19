@@ -33,7 +33,6 @@ void PID::UpdateError(double cte) {
 
 double PID::TotalError() {
 
-	std::cout << "PE " << p_error_ << " DE " << d_error_ << " IE " << i_error_ << std::endl;
 	return - Kp_ * p_error_ - Ki_ * i_error_ - Kd_ * d_error_;
 }
 
