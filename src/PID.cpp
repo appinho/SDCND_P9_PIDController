@@ -17,12 +17,16 @@ void PID::Init(double Kp, double Ki, double Kd) {
 	i_error_ = 0.0;
 	d_error_ = 0.0;
 	prev_error_ = 0.0;
+
+	frame_counter_ = 0;
 }
 
 void PID::UpdateError(double cte) {
 
 	p_error_ = cte;
-	i_error_ += cte;
+	frame_counter_++;
+	abs_error_ += cte;
+	i_error_ = abs_error_ / frame_counter_;
 	d_error_ = cte - prev_error_;
 	prev_error_ = cte;
 }

@@ -8,6 +8,7 @@ public:
   */
   double p_error_;
   double i_error_;
+  double abs_error_;
   double d_error_;
   double prev_error_;
 
@@ -17,6 +18,8 @@ public:
   double Kp_;
   double Ki_;
   double Kd_;
+
+  int frame_counter_;
 
   /*
   * Constructor
